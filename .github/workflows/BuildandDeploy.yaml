@@ -19,6 +19,11 @@ jobs:
       run: |
         npm install
         CI=false npm run build  # If applicable, run the build command
+        
+    - name: list
+      run: |
+        pwd
+        ls -ltrh       
 
     - name: Deploy to cPanel
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -27,7 +32,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
-        local-dir: ./build  # Change this to your build output directory
+        local-dir: ./  # Change this to your build output directory
         server-dir: ${{ secrets.REMOTE_PATH }}
         protocol: ftp
         log-level: verbose
