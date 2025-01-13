@@ -21,8 +21,7 @@ jobs:
 
     - name: list pre build
       run: |
-        pwd
-        ls -ltrh
+        tree
 
     - name: Build
       run: |
@@ -30,5 +29,4 @@ jobs:
     
     - name: list post build
       run: |
-        pwd
-        ls -ltrh
+        tree
