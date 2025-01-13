@@ -18,7 +18,7 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install
-        npm run build  # If applicable, run the build command
+        CI=false npm run build  # If applicable, run the build command
 
     - name: Deploy to cPanel
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
