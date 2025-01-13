@@ -19,14 +19,14 @@ jobs:
       run: |
         npm install
 
-    - name: Build
-      run: |
-        CI=false npm run build  # If applicable, run the build command
-
     - name: list pre build
       run: |
         pwd
         ls -ltrh
+
+    - name: Build
+      run: |
+        CI=false npm run build  # If applicable, run the build command
     
     - name: list post build
       run: |
